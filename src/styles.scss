@@ -1,0 +1,11 @@
+@import "./scss/map-of-donor.scss";
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.tooltip{
+    text-align: left;
+} 
+
+#current-total .axis.axis--x { 
+    display: none;
+}
+
