@@ -50,17 +50,20 @@ export class PercentOfTotalComponent implements OnInit {
       data.forEach(d => d.satisfied=d.total-d.outstanding);
       x.domain(data.map(d => d.name));
       z.domain(seriesNames);
+      console.log(seriesNames);
         
       var serie = g.selectAll(".serie")
         .data(stack(data))
         .enter().append("g")
         .attr("class", "serie")
-        .attr("fill", d => z(d.key));
+        .attr("fill", (d):any => {
+          return z(d.key)
+        })
         
         serie.selectAll("rect")    
           .data(d => d)
           .enter().append("rect")
-            .attr("x", d => x(d.data.name))
+            .attr("x", d => x(<string><any>d.data.name))
             .attr("y", d => y(d[1]))
             .attr("width", x.bandwidth())
             .style("opacity", 0.8)
