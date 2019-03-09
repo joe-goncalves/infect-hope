@@ -136,5 +136,8 @@
       }
     }
   },
-  "defaultProject": "infect-hope"
+  "defaultProject": "infect-hope",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

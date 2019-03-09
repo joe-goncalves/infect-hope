@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as d3 from 'd3'
 import { HelperService } from '../helper.service';
+import { environment } from '../../environments/environment';
+
 
 @Component({
   selector: 'app-percent-of-total',
@@ -15,6 +17,7 @@ export class PercentOfTotalComponent implements OnInit {
   
   constructor() { 
     this.today = new Date().toLocaleDateString();
+    console.log(environment);
   }
 
   drawChart() {
